@@ -1,6 +1,6 @@
 {
   "name": "dr-vue-echarts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A vue-echart library",
   "main": "index.js",
   "scripts": {
@@ -22,7 +22,6 @@
     "url": "https://github.com/drinkeewu/dr-vue-echarts/issues"
   },
   "homepage": "https://github.com/drinkeewu/dr-vue-echarts#readme",
-
   "dependencies": {
     "echarts": "^4.6.0",
     "echarts-wordcloud": "^1.1.3",
