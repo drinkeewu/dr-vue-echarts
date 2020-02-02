@@ -14,7 +14,7 @@ import 'echarts-wordcloud';
 import isEmpty from 'lodash/isEmpty';
 import debounce from 'lodash/debounce';
 import { addListener, removeListener } from 'resize-detector';
-import waldenTheme from '../theme/walden.json';
+import waldenTheme from '../../../theme/walden.json';
 
 const DEFAULT_COLOR = waldenTheme.theme.color;
 

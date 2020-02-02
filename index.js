@@ -1,1 +1,1 @@
-export { default as WordCloudChart } from './word-cloud';
+export { default as WordCloudChart } from './packages/word-cloud';
