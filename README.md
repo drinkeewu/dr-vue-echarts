@@ -21,7 +21,10 @@ export default {
   components: {
     WordCloudChart
   },
-  data: []
+  data: [
+    { name: 'word1', value : 10 },
+    { name: 'word2', value : 15 }
+  ]
 }
 ```
 
@@ -29,6 +32,6 @@ export default {
 // html
 
 <template>
-  <WordCloudChart/>
+  <WordCloudChart :data="data"/>
 </template>
 ```
