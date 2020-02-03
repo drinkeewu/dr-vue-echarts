@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/drinkeewu/dr-vue-echarts#readme",
   "dependencies": {
-    "echarts": "^4.6.0",
+    "echarts": "^4.5.0",
     "echarts-wordcloud": "^1.1.3",
     "lodash": "^4.17.15",
     "resize-detector": "^0.2.0"
