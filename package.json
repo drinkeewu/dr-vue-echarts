@@ -1,6 +1,6 @@
 {
   "name": "dr-vue-echarts",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A vue-echart library",
   "main": "index.js",
   "scripts": {
