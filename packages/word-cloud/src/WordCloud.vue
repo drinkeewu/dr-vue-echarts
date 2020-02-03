@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import Echart from 'echarts';
 import 'echarts-wordcloud';
+import Echart from 'echarts';
 import isEmpty from 'lodash/isEmpty';
 import debounce from 'lodash/debounce';
 import { addListener, removeListener } from 'resize-detector';
