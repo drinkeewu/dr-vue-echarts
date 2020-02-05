@@ -4,6 +4,7 @@
     autoresizse
     :options="options"
     :style="style"
+    v-bind="$attrs"
   />
 </template>
 

@@ -4,6 +4,7 @@
     autoresize
     :theme="theme"
     :options="options"
+    v-bind="$attrs"
   />
 </template>
 
