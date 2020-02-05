@@ -1,5 +1,6 @@
 <template>
   <vchart
+    ref="el"
     autoresizse
     :options="options"
     :style="style"
@@ -12,15 +13,7 @@ import 'echarts/map/js/china';
 import 'echarts/extension/bmap/bmap';
 import 'echarts/map/js/province/guangdong';
 import vchart from 'vue-echarts';
-import { GUANGDONG_CITY_MAP } from 'shared/constants';
 
-
-const GD_CITY_NAMES = Object.keys(GUANGDONG_CITY_MAP);
-
-function resolveJSON(city) {
-  // eslint-disable-next-line import/no-dynamic-require
-  return require(`./json/${city}.json`);
-}
 
 export default {
   name: 'Map',
@@ -28,6 +21,12 @@ export default {
     vchart,
   },
   props: {
+    option: {
+      type: Object,
+      default() {
+        return {};
+      },
+    },
     width: {
       type: String,
       default: '100%',
@@ -96,24 +95,13 @@ export default {
       default: 'china',
     },
 
-    roam: {
-      type: Boolean,
-      default: false,
-    },
+    roam: Boolean,
     zoom: {
       type: Number,
       default: 1,
     },
-    center: {
-      type: Array,
-      default() {
-        return [];
-      },
-    },
-    autoTooltip: {
-      type: Boolean,
-      default: false,
-    },
+    center: Array,
+    autoTooltip: Boolean,
     lowColor: {
       type: String,
       default: '#ffd65a',
@@ -130,6 +118,11 @@ export default {
       type: String,
       default: '#333',
     },
+  },
+  data() {
+    return {
+      chart: null,
+    };
   },
   computed: {
     style() {
@@ -206,11 +199,36 @@ export default {
           },
         ],
       };
-      return options;
+      return {
+        ...options,
+        ...this.option,
+      };
     },
   },
-  methods: {
+  watch: {
+    mapType(val) {
 
+    },
+  },
+  mounted() {
+    this.init();
+  },
+  methods: {
+    init() {
+      const { el } = this.$refs;
+      this.chart = el.chart;
+      Object.keys(this.$listeners).forEach((event) => {
+        if (event.indexOf('zr:') === 0) {
+          el.chart.on(event.slice(3), (e) => {
+            this.$emit(event, e);
+          });
+        } else {
+          el.chart.on(event, (e) => {
+            this.$emit(event, e);
+          });
+        }
+      });
+    },
   },
 };
 </script>

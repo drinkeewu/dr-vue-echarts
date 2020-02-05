@@ -18,6 +18,12 @@ export default {
     vchart,
   },
   props: {
+    option: {
+      type: Object,
+      default() {
+        return {};
+      },
+    },
     theme: {
       type: String,
       default: 'walden',
@@ -185,7 +191,10 @@ export default {
         },
         series: seriesData,
       };
-      return options;
+      return {
+        ...options,
+        ...this.option,
+      };
     },
   },
 };
