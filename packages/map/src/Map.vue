@@ -1,7 +1,7 @@
 <template>
   <vchart
     ref="el"
-    autoresizse
+    autoresize
     :options="options"
     :style="style"
     v-bind="$attrs"
