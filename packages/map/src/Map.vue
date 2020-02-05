@@ -87,10 +87,7 @@ export default {
       default: 'map',
     },
 
-    areaEmphasisColor: {
-      type: String,
-      default: '',
-    },
+    areaEmphasisColor: String,
     name: {
       type: String,
       default: 'china',
@@ -118,6 +115,12 @@ export default {
     labelColor: {
       type: String,
       default: '#333',
+    },
+    visualMapText: {
+      type: Array,
+      default() {
+        return [];
+      },
     },
   },
   data() {
@@ -151,7 +154,7 @@ export default {
           itemHeight: 80,
           min: MIN,
           max: MAX,
-          text: ['高', '低'],
+          text: this.visualMapText,
 
           inRange: {
             color: [this.lowColor, this.highColor],
@@ -174,7 +177,6 @@ export default {
                 borderColor: this.borderColor,
                 label: {
                   show(params) {
-                    console.log('show', params);
                     return true;
                   },
                   textStyle: {
@@ -207,7 +209,7 @@ export default {
     },
   },
   watch: {
-    mapType(val) {
+    mapType(type) {
 
     },
   },

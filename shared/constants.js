@@ -1,4 +1,4 @@
-export const GUANGDONG_CITY_MAP = {
+export const GUANGDONG_CITY_DIR = {
   江门市: 'jiangmen',
   茂名市: 'maoming',
   惠州市: 'huizhou',
@@ -20,6 +20,11 @@ export const GUANGDONG_CITY_MAP = {
   中山市: 'zhongshan',
   珠海市: 'zhuhai',
   潮州市: 'chaozhou',
+};
+
+export const PROVINCE_DIR = {
+  广东: 'guangdong',
+
 };
 
 export const GUANGDDONG_CITY_LOCATION = {
