@@ -1,3 +1,40 @@
+export const PROVINCE_DIR = {
+  安徽: 'anhui',
+  重庆: 'chongqing',
+  广东: 'guangdong',
+  海南: 'hainan',
+  河南: 'henan',
+  江苏: 'jiangsu',
+  辽宁: 'liaoning',
+  青海: 'qinghai',
+  山西: 'shanxi',
+  台湾: 'taiwan',
+  新疆: 'xinjiang',
+  浙江: 'zhejiang',
+  澳门: 'aomen',
+  福建: 'fujian',
+  广西: 'guangxi',
+  河北: 'hebei',
+  湖北: 'hubei',
+  江西: 'jiangxi',
+  内蒙古: 'neimenggu',
+  山东: 'shandong',
+  陕西: 'shanxi1',
+  天津: 'tianjin',
+  西藏: 'xizang',
+  北京: 'beijing',
+  甘肃: 'gansu',
+  贵州: 'guizhou',
+  黑龙江: 'heilongjiang',
+  湖南: 'hunan',
+  吉林: 'jilin',
+  宁夏: 'ningxia',
+  上海: 'shanghai',
+  四川: 'sichuan',
+  香港: 'xianggang',
+  云南: 'yunnan',
+};
+
 export const GUANGDONG_CITY_DIR = {
   江门市: 'jiangmen',
   茂名市: 'maoming',
@@ -22,10 +59,6 @@ export const GUANGDONG_CITY_DIR = {
   潮州市: 'chaozhou',
 };
 
-export const PROVINCE_DIR = {
-  广东: 'guangdong',
-
-};
 
 export const GUANGDDONG_CITY_LOCATION = {
   广州市: [113.53, 23.36],
