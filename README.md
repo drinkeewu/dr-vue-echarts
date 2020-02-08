@@ -1,4 +1,7 @@
 # dr-vue-echarts
+[![NPM version](https://badge.fury.io/js/dr-vue-echarts.svg)](https://www.npmjs.com/package/dr-vue-echarts)
+
+
 A echarts library in Vue.js
 
 
