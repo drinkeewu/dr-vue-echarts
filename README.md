@@ -1,37 +1,32 @@
 # dr-vue-echarts
-A echarts library in Vue.js
+[![NPM version](https://badge.fury.io/js/dr-vue-echarts.svg)](https://www.npmjs.com/package/dr-vue-echarts)
 
+**A Echart Library for Vue.js** 📈📊
 
-## Usage
-**Example**
-
-install
+## Install
 ```node
 npm install dr-vue-echarts
 ```
 
-to start
+## Quick Start
 ```js
-//js
+import Vue from 'vue';
+import { BarChart, WordCloudChart } from 'dr-vue-echarts';
 
-import { WordCloudChart } from 'dr-vue-echarts'
-
-export default {
-  //...
-  components: {
-    WordCloudChart
-  },
-  data: [
-    { name: 'word1', value : 10 },
-    { name: 'word2', value : 15 }
-  ]
-}
+Vue.component(BarChart.name, BarChart);
+Vue.component(WordChart.name, WordCloudChart)
 ```
 
-```html
-// html
+## TODO
+- [ ] 说明文档‼️
+- [x] 柱状图
+- [x] 词云
+- [x] 地图
+- [ ] 折线图
+- [ ] 饼图
+- [ ] 关系图
+- [ ] 散点图
+- [ ] 雷达图
 
-<template>
-  <WordCloudChart :data="data"/>
-</template>
-```
+
+

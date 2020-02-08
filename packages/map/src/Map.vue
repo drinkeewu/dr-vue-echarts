@@ -1,7 +1,7 @@
 <template>
   <vchart
     ref="el"
-    autoresizse
+    autoresize
     :options="options"
     :style="style"
     v-bind="$attrs"
@@ -12,8 +12,24 @@
 import echarts from 'echarts';
 import 'echarts/map/js/china';
 import 'echarts/extension/bmap/bmap';
-import 'echarts/map/js/province/guangdong';
 import vchart from 'vue-echarts';
+
+import { PROVINCE_DIR } from 'shared/constants';
+
+
+const provinces = Object.values(PROVINCE_DIR);
+
+function importProvinceMap(name) {
+  const fileName = PROVINCE_DIR[name];
+  fileName && require(`echarts/map/js/province/${fileName}`);
+}
+
+
+function importAllProvinceMap() {
+  provinces.forEach((name) => {
+    importProvinceMap(name);
+  });
+}
 
 
 export default {
@@ -209,13 +225,17 @@ export default {
     },
   },
   watch: {
-    mapType(type) {
-
+    mapType: {
+      immediate: true,
+      handler(type) {
+        importProvinceMap(type);
+      },
     },
   },
   mounted() {
     this.init();
   },
+
   methods: {
     init() {
       const { el } = this.$refs;
@@ -232,6 +252,7 @@ export default {
         }
       });
     },
+
   },
 };
 </script>
