@@ -2,8 +2,7 @@
 [![NPM version](https://badge.fury.io/js/dr-vue-echarts.svg)](https://www.npmjs.com/package/dr-vue-echarts)
 
 
-A Echarts Library for Vue.js
-
+A Echart  Library for Vue.js 📈📊
 
 ## Usage
 **Example**
