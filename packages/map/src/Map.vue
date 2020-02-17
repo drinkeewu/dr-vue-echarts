@@ -33,7 +33,7 @@ function importAllProvinceMap() {
 
 
 export default {
-  name: 'Map',
+  name: 'MapChart',
   components: {
     vchart,
   },
