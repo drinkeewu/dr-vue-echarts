@@ -8,6 +8,7 @@ cache:
   - node_modules # 缓存npm包 
 
 before_script: 
+  - npm install vuepress -g
   - npm install
   
 script:
