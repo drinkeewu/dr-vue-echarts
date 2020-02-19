@@ -27,7 +27,7 @@ import Vue from 'vue';
 import { BarChart, WordCloudChart } from 'dr-vue-echarts';
 
 Vue.component(BarChart.name, BarChart);
-Vue.component(WordChart.name, WordCloudChart)
+Vue.component(WordCloudChart.name, WordCloudChart)
 ```
 
 ## TODO
