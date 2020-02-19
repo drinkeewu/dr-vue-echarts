@@ -4,7 +4,7 @@ module.exports = {
   description: '基于Vue.js、Echarts的图表组件库',
   themeConfig: {
     nav: [
-      {text: '教程', link: '/install/'},
+      {text: '教程', link: '/usage/'},
     ],
     sidebar:[
       {
