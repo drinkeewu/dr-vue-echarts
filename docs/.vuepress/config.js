@@ -1,6 +1,6 @@
 module.exports = {
   title: 'dr-vue-echarts',
-  base: '/dr-vue-echarts',
+  base: '/dr-vue-echarts/',
   description: '基于Vue.js、Echarts的图表组件库',
   themeConfig: {
     nav: [
