@@ -5,7 +5,7 @@ module.exports = {
   themeConfig: {
     nav: [
       {text: '教程', link: '/usage/'},
-      {text: 'Github', link: 'https://drinkeewu.github.io/dr-vue-echarts/'},
+      {text: 'Github', link: 'https://github.com/drinkeewu/dr-vue-echarts'},
     ],
     sidebar:[
       {
