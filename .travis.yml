@@ -25,7 +25,7 @@ after_script:
 
 branches:
   only:
-    - tags # 触发集成分支
+    - master # 触发集成分支
 
 env:
   global:
