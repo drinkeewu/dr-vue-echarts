@@ -1,7 +1,7 @@
 ---
 home: true
 actionText: 前往 →
-actionLink: /install/
+actionLink: /usage/
 heroImage: /asset/logo.png
 features:
 
