@@ -4,6 +4,8 @@
 
 **A Echart Library for Vue.js** 📈📊
 
+[使用说明文档](https://drinkeewu.github.io/dr-vue-echarts/)
+
 ## Install
 ```node
 npm install dr-vue-echarts
@@ -19,12 +21,11 @@ Vue.component(WordChart.name, WordCloudChart)
 ```
 
 ## TODO
-- [ ] 说明文档‼️
 - [x] 柱状图
 - [x] 词云
 - [x] 地图
+- [x] 饼图
 - [ ] 折线图
-- [ ] 饼图
 - [ ] 关系图
 - [ ] 散点图
 - [ ] 雷达图
