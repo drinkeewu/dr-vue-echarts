@@ -8,7 +8,7 @@
     "cm": "git-cz",
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
-    "postversion": "git push --follow-tags",
+    "postversion": "git push --follow-tags"
   },
   "repository": {
     "type": "git",
