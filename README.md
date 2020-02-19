@@ -1,7 +1,7 @@
 
 
 <p align="center">
-  <a href="https://drinkeewu.github.io/dr-vue-echarts/" target="_blank">
+  <a href="https://github.com/drinkeewu/dr-vue-echarts" target="_blank">
     <img width="180" src="https://raw.githubusercontent.com/drinkeewu/dr-vue-echarts/master/docs/.vuepress/public/asset/logo.png" alt="logo">
   </a>
 </p>
@@ -34,7 +34,7 @@ Vue.component(WordChart.name, WordCloudChart)
 - [x] BarChart 柱状图
 - [x] WordCloudChart 词云
 - [x] MapChart 地图
-- [x] PieChart饼图
+- [x] PieChart 饼图
 - [ ] LineChart 折线图
 - [ ] RelationChart 关系图
 - [ ] ScatterChart 散点图
