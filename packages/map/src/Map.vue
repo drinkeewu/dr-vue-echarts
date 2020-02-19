@@ -14,7 +14,7 @@ import 'echarts/map/js/china';
 import 'echarts/extension/bmap/bmap';
 import vchart from 'vue-echarts';
 
-import { PROVINCE_DIR } from 'shared/constants';
+import { PROVINCE_DIR } from '../../../shared/constants';
 
 
 const provinces = Object.values(PROVINCE_DIR);
@@ -162,6 +162,7 @@ export default {
       const MAX = data.length > 0
         ? Math.max(...(data.map(i => i.value)))
         : 0;
+      const initVisualMapText = [MAX, MIN];
       const options = {
         visualMap: {
           type: 'continuous',
@@ -170,7 +171,9 @@ export default {
           itemHeight: 80,
           min: MIN,
           max: MAX,
-          text: this.visualMapText,
+          text: this.visualMapText.length > 0 
+            ? this.visualMapText 
+            : initVisualMapText,
 
           inRange: {
             color: [this.lowColor, this.highColor],

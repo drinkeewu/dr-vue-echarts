@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cm": "git-cz"
+    "cm": "git-cz",
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
   },
   "repository": {
     "type": "git",
@@ -33,7 +35,10 @@
   },
   "devDependencies": {
     "commitizen": "^4.0.3",
-    "cz-conventional-changelog": "^3.1.0"
+    "cz-conventional-changelog": "^3.1.0",
+    "element-ui": "^2.13.0",
+    "less": "^3.11.1",
+    "less-loader": "^5.0.0"
   },
   "config": {
     "commitizen": {

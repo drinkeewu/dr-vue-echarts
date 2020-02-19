@@ -1,0 +1,15 @@
+.size {
+  width: 100%;
+  height: 300px;
+}
+
+table.el-table {
+  margin: 0 !important;
+  border: none !important;
+}
+th[class*=el-table], td[class*=el-table] {
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  background: #fff !important;
+}

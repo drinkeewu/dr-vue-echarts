@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import 'echarts-wordcloud';
 import Echart from 'echarts';
 import isEmpty from 'lodash/isEmpty';
 import debounce from 'lodash/debounce';
@@ -91,7 +90,9 @@ export default {
     },
   },
   mounted() {
-    this.render();
+    import('echarts-wordcloud').then(() => {
+      this.render();
+    })
   },
   beforeDestroy() {
     removeListener(this.el);
