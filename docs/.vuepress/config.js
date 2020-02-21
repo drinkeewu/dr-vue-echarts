@@ -1,9 +1,11 @@
 module.exports = {
-  title: 'dr-vue-charts',
+  title: 'dr-vue-echarts',
+  base:  process.env.NODE_ENV === 'production' ? '/dr-vue-echarts/' : '',
   description: '基于Vue.js、Echarts的图表组件库',
   themeConfig: {
     nav: [
       {text: '教程', link: '/usage/'},
+      {text: 'Github', link: 'https://github.com/drinkeewu/dr-vue-echarts'},
     ],
     sidebar:[
       {
@@ -18,11 +20,9 @@ module.exports = {
         collapsable:false,
         children: [
           '/charts/bar',
-          '/charts/line',
           '/charts/pie',
           '/charts/word-cloud',
           '/charts/map',
-
         ]
       }
     ]
