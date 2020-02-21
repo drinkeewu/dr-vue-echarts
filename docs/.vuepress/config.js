@@ -20,6 +20,7 @@ module.exports = {
         collapsable:false,
         children: [
           '/charts/bar',
+          '/charts/line',
           '/charts/pie',
           '/charts/word-cloud',
           '/charts/map',
