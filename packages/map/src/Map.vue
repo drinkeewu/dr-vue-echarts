@@ -5,16 +5,19 @@
     :options="options"
     :style="style"
     v-bind="$attrs"
+    :theme="theme"
   />
 </template>
 
 <script>
-import echarts from 'echarts';
+import 'echarts';
 import 'echarts/map/js/china';
 import 'echarts/extension/bmap/bmap';
 import vchart from 'vue-echarts';
+import waldenTheme from '../../../theme/walden.json'
+vchart.registerTheme('walden', waldenTheme)
 
-import { PROVINCE_DIR } from '../../../shared/constants';
+import { PROVINCE_DIR, STRING_PROP, OBJECT_PROP, ARRAY_PROP, NUMBER_PROP } from '../../../shared/constants';
 
 
 const provinces = Object.values(PROVINCE_DIR);
@@ -38,77 +41,21 @@ export default {
     vchart,
   },
   props: {
-    option: {
-      type: Object,
-      default() {
-        return {};
-      },
-    },
-    width: {
-      type: String,
-      default: '100%',
-    },
-    height: {
-      type: String,
-      default: '100%',
-    },
-    title: {
-      type: String,
-      default: '',
-    },
-    data: {
-      type: Array,
-      default() {
-        return [];
-      },
-    },
-    mapType: {
-      type: String,
-      default: 'china',
-    },
-    titleColor: {
-      type: String,
-      default: '#000',
-    },
-    titlePosition: {
-      type: String,
-      default: 'center',
-    },
-    itemColor: {
-      type: String,
-      default: '#f4e925',
-    },
-    itemShadowColor: {
-      type: String,
-      default: '#f4e925',
-    },
-    itemMinSize: {
-      type: Number,
-      default: 3,
-    },
-    itemMaxSize: {
-      type: Number,
-      default: 60,
-    },
-    areaColor: {
-      type: String,
-      default: '#eaeaea',
-    },
-    borderColor: {
-      type: String,
-      default: '#999',
-    },
-    type: {
-      type: String,
-      default: 'map',
-    },
-
-    areaEmphasisColor: String,
+    theme: STRING_PROP('walden'),
+    option: OBJECT_PROP(),
+    width: STRING_PROP('100%'),
+    height: STRING_PROP('100%'),
+    title: STRING_PROP(),
+    data: ARRAY_PROP(),
+    mapType: STRING_PROP('map'),
+    titleColor: STRING_PROP('#000'),
+    titlePosition: STRING_PROP('center'),
+    areaColor: STRING_PROP('#eaeaea'),
+    borderColor: STRING_PROP('#999999'),
     name: {
       type: String,
       default: 'china',
     },
-
     roam: Boolean,
     zoom: {
       type: Number,
@@ -123,10 +70,6 @@ export default {
     highColor: {
       type: String,
       default: '#fa675c',
-    },
-    backgroundColor: {
-      type: String,
-      default: 'transparent',
     },
     labelColor: {
       type: String,
@@ -175,9 +118,9 @@ export default {
             ? this.visualMapText 
             : initVisualMapText,
 
-          inRange: {
-            color: [this.lowColor, this.highColor],
-          },
+          // inRange: {
+          //   color: [this.lowColor, this.highColor],
+          // },
           textStyle: {
             color: this.titleColor,
           },

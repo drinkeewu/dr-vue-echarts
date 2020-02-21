@@ -2,20 +2,17 @@
   <component
     v-if="chart"
     :is="chart"
-    ref="el"
-    :style="style"
     autoresize
     :theme="theme"
     :options="options"
-    v-bind="$attrs"
+    :style="style"
   />
 </template>
 
 <script>
-import { bar } from "../../../utils/formatter";
+import { line } from "../../../utils/formatter";
 import { DEFAULT_COLORS } from "../../../theme";
 import { emitEvent, registerTheme } from "../../../utils/mixins";
-import flattenDeep from "lodash/flattenDeep";
 import {
   ARRAY_PROP,
   OBJECT_PROP,
@@ -23,12 +20,12 @@ import {
   BOOLEAN_PROP,
   NUMBER_PROP
 } from "../../../shared/constants";
+import flattenDeep from "lodash/flattenDeep";
 
-const INIT_GRID_LEFT = 10;
-const INIT_GRID_RIGHT = 0;
 export default {
-  name: "BarChart",
+  name: "LineChart",
   mixins: [emitEvent("el"), registerTheme("chart")],
+
   props: {
     option: OBJECT_PROP({}),
     animation: BOOLEAN_PROP(true),
@@ -52,14 +49,15 @@ export default {
     grid: OBJECT_PROP(),
     labelRotate: BOOLEAN_PROP(false),
     labelRotateDeg: NUMBER_PROP(40),
-    barMaxWidth: STRING_PROP("100%")
+    barMaxWidth: STRING_PROP("100%"),
+    smooth: BOOLEAN_PROP(false),
+    area: BOOLEAN_PROP(false)
   },
   data() {
     return {
       chart: null
     };
   },
-
   computed: {
     style() {
       const { width, height } = this;
@@ -98,18 +96,18 @@ export default {
       return this.getDataMaxValueLength() * 10 + 10;
     },
     options() {
-      const { seriesData, labels, names, colors } = this.getData();
-      this.rainbow && this.setRainbow(seriesData);
+      const { seriesData, labels, names } = this.getData();
       seriesData.forEach(item => {
         item.barMaxWidth = this.barMaxWidth;
+        item.smooth = this.smooth;
+        this.area && (item.areaStyle = {});
       });
       let options = {
         animation: this.animation,
         grid: {
           containLabel: true,
           bottom: 10,
-          left: this.gridLeft,
-          right: this.gridRight
+          left: this.gridLeft
         },
         xAxis: {
           name: this.xName,
@@ -150,12 +148,14 @@ export default {
           trigger: "axis",
           axisPointer: {
             type: "cross",
-            animation: false
+            animation: false,
+            label: {
+              backgroundColor: "#717b97"
+            }
           }
         },
         series: seriesData
       };
-
       this.labelRotate && this.setxNameRotate(options);
       this.zoom && this.setZoom(options);
       this.colors.length > 0 && this.setColor(options);
@@ -168,7 +168,7 @@ export default {
   },
   methods: {
     getData() {
-      return bar(this.data);
+      return line(this.data);
     },
     getDataLabelMaxLength() {
       const { labels } = this.getData();
@@ -186,24 +186,6 @@ export default {
         rotate: this.labelRotateDeg
       };
     },
-    setRainbow(seriesData) {
-      seriesData.forEach(item => {
-        item.itemStyle = {
-          normal: {
-            color: params => {
-              const colors =
-                this.colors.length > 0 ? this.colors : DEFAULT_COLORS;
-              const index = params.dataIndex % colors.length;
-              return colors[index];
-            }
-          }
-        };
-      });
-    },
-    setColor(options) {
-      options.color = this.colors;
-    },
-
     setZoom(options) {
       let slider = this.horizontal
         ? {
@@ -215,8 +197,7 @@ export default {
           }
         : {
             type: "slider",
-            bottom: 0,
-            right: 10
+            bottom: 0
           };
       options.dataZoom = [
         {
@@ -233,7 +214,12 @@ export default {
         ...options.grid,
         bottom: 40
       };
+    },
+    setColor(options) {
+      options.color = this.colors;
     }
   }
 };
 </script>
+
+<style></style>

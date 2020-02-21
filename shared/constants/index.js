@@ -1,2 +1,2 @@
-export * from './location'
-export * from './props'
+export * from './location';
+export * from './props';

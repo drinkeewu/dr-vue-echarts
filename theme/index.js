@@ -1,3 +1,3 @@
 import waldenTheme from './walden.json';
 
-export const DEFAULT_COLORS = waldenTheme.theme.color;
+export const DEFAULT_COLORS = waldenTheme.color;

@@ -10,30 +10,44 @@
 ```vue
 <template>
   <div class="chart">
-    <WordCloudChart :data="wordCloudData"/>
+      <component 
+        v-if="chart" 
+        :is="chart" 
+        :data="wordCloudData"
+        
+      />
   </div>
 </template>
 
 <script>
+import { importWordCloud } from '../../mixins'
 export default {
-  name: "Base",
+  name: 'Base',
+  mixins: [importWordCloud('chart')],
   data() {
     return {
-      wordCloudData: [
-        { name: "测试1", value: 100 },
-        { name: "测试2", value: 100 },
-        { name: "测试3", value: 100 }
-      ]
-    };
-  }
-};
+      wordCloudData: Array.from({length: 100}, (v, i) => ({
+        name: `测试${i+1}`,
+        value: 10+i
+      })),
+      chart: null
+    }
+  },
+  
+}
 </script>
-<style>
+
+<style scoped>
 .chart {
   width: 100%;
   height: 300px;
 }
 </style>
+
+
 ```
 
 :::
+
+## 属性 Attributes
+<word-cloud-attributes/>

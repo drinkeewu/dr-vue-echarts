@@ -20,6 +20,13 @@ export default {
           default: "true"
         },
         {
+          name: 'theme',
+          type: 'string',
+          desc: '颜色主题',
+          default: 'walden',
+          options: 'walden / purple-passion / westeros'
+        },
+        {
           name: "data",
           type: "array",
           desc: "用户渲染的数据"

@@ -1,8 +1,12 @@
 <template>
-  <vchart 
+  <component
+    ref="el"
+    v-if="chart" 
+    :is="chart"
     class="chart" 
     autoresize 
     :options="options" 
+    :theme="theme"
   />
 </template>
 
@@ -15,12 +19,11 @@ import {
   STRING_PROP,
   BOOLEAN_PROP
 } from "../../../shared/constants";
+import { emitEvent, registerTheme } from '../../../utils/mixins'
 
 export default {
   name: "PieChart",
-  components: {
-    vchart
-  },
+  mixins: [emitEvent('el'), registerTheme('chart')],
   props: {
     data: ARRAY_PROP(),
     colors: ARRAY_PROP(),
@@ -37,7 +40,13 @@ export default {
     emphasisLabel: BOOLEAN_PROP(true),
     tooltip: BOOLEAN_PROP(true),
     animation: BOOLEAN_PROP(true),
+    theme: STRING_PROP('walden')
 
+  },
+  data() {
+    return {
+      chart: null
+    }
   },
   computed: {
     labelShow() {
@@ -56,7 +65,6 @@ export default {
       // options
       let options = {
         animation: this.animation,
-        color: colors && colors.length > 0 ? colors : DEFAULT_COLORS,
         title: {
           text:this.title
         },

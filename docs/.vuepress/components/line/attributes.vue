@@ -17,14 +17,14 @@ export default {
           name: "animation",
           type: "boolean",
           desc: "是否开启动, 数据太大时, 可以关闭动画以提升性能",
-          default: 'true'
+          default: "true"
         },
         {
-          name: 'theme',
-          type: 'string',
-          desc: '颜色主题',
-          default: 'walden',
-          options: 'walden / purple-passion / westeros'
+          name: "theme",
+          type: "string",
+          desc: "颜色主题",
+          default: "walden",
+          options: "walden / purple-passion / westeros"
         },
         {
           name: "data",
@@ -117,6 +117,18 @@ export default {
           desc:
             "柱条的最大宽度。可以是绝对值例如 <code>40</code> 或者百分数例如 <code>60%</code>。百分数基于自动计算出的每一类目的宽度。",
           default: "100%"
+        },
+        {
+          name: "smooth",
+          desc: "是否显示光滑曲线",
+          default: "false",
+          type: "boolean"
+        },
+        {
+          name: "area",
+          desc: "是否填充折线图区域",
+          type: 'boolean',
+          default: 'false'
         }
       ]
     };

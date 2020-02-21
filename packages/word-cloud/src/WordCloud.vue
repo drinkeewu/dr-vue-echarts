@@ -14,25 +14,18 @@ import isEmpty from 'lodash/isEmpty';
 import debounce from 'lodash/debounce';
 import { addListener, removeListener } from 'resize-detector';
 import waldenTheme from '../../../theme/walden.json';
+import { STRING_PROP, ARRAY_PROP, BOOLEAN_PROP } from '../../../shared/constants'
 
-const DEFAULT_COLOR = waldenTheme.theme.color;
+const DEFAULT_COLOR = waldenTheme.color;
 
 export default {
   name: 'WordCloudChart',
   props: {
-    data: {
-      type: Array,
-      default() {
-        return [];
-      },
-    },
-    sizeRange: {
-
-      type: Array,
-      default() {
-        return [0, 100];
-      },
-    },
+    data: ARRAY_PROP(),
+    sizeRange: ARRAY_PROP([0, 100]),
+    theme: STRING_PROP('walden'),
+    colorRange: ARRAY_PROP(DEFAULT_COLOR),
+    drawOutOfBound: BOOLEAN_PROP(false)
   },
   data() {
     return {
@@ -43,6 +36,8 @@ export default {
   },
   computed: {
     option() {
+
+      const { colorRange } = this
       if (this.data.length === 0) {
         return {};
       }
@@ -61,12 +56,14 @@ export default {
               minSize: 600,
             },
 
+            drawOutOfBound: this.drawOutOfBound,
+            
 
             textStyle: {
               normal: {
                 color() {
-                  return DEFAULT_COLOR[
-                    Math.floor(Math.random() * DEFAULT_COLOR.length)
+                  return colorRange[
+                    Math.floor(Math.random() * colorRange.length)
                   ];
                 },
               },
@@ -88,8 +85,16 @@ export default {
         this.render();
       },
     },
+    theme: {
+      immediate: true,
+      handler(theme){
+        import(`../../../theme/${theme}.json`).then(module => {
+          this.registerTheme(theme, module.default)
+        })
+      }
+    }
   },
-  mounted() {
+  async mounted() {
     import('echarts-wordcloud').then(() => {
       this.render();
     })
@@ -103,8 +108,7 @@ export default {
         return;
       }
       this.el = this.$refs.chart;
-      Echart.registerTheme('walden', waldenTheme);
-      this.chart = Echart.init(this.el, 'walden');
+      this.chart = Echart.init(this.el, this.theme);
       this.chart.setOption(this.option, false, true);
       addListener(this.el, debounce(() => {
         this.chart.resize();
@@ -112,6 +116,9 @@ export default {
         leading: true,
       }));
     },
+    registerTheme(name, module) {
+      Echart.registerTheme(name, module)
+    }
 
   },
 };

@@ -1,6 +1,11 @@
 <template>
   <div class="chart">
-      <component v-if="chart" :is="chart" :data="wordCloudData"/>
+      <component 
+        v-if="chart" 
+        :is="chart" 
+        :data="wordCloudData"
+        
+      />
   </div>
 </template>
 
@@ -11,11 +16,10 @@ export default {
   mixins: [importWordCloud('chart')],
   data() {
     return {
-      wordCloudData: [
-        { name: '测试1', value: 100 },
-        { name: '测试2', value: 100 },
-        { name: '测试3', value: 100 },
-      ],
+      wordCloudData: Array.from({length: 100}, (v, i) => ({
+        name: `测试${i+1}`,
+        value: 10+i
+      })),
       chart: null
     }
   },
