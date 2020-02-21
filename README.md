@@ -24,10 +24,9 @@ npm install dr-vue-echarts
 ## Quick Start
 ```js
 import Vue from 'vue';
-import { BarChart, WordCloudChart } from 'dr-vue-echarts';
+import DrVueEcharts from 'dr-vue-echarts';
 
-Vue.component(BarChart.name, BarChart);
-Vue.component(WordCloudChart.name, WordCloudChart)
+Vue.use(DrVueEcharts)
 ```
 
 ## TODO
