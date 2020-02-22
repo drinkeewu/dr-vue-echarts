@@ -34,7 +34,7 @@ Vue.use(DrVueEcharts)
 - [x] WordCloudChart 词云
 - [x] MapChart 地图
 - [x] PieChart 饼图
-- [ ] LineChart 折线图
+- [x] LineChart 折线图
 - [ ] RelationChart 关系图
 - [ ] ScatterChart 散点图
 - [ ] RadarChart 雷达图
