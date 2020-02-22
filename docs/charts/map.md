@@ -10,9 +10,7 @@
 ```vue
 <template>
   <div class="size">
-    <ClientOnly>
-      <MapChart :data="mapData" :map-type="mapType" />
-    </ClientOnly>
+    <MapChart :data="mapData" :map-type="mapType" />
   </div>
 </template>
 
