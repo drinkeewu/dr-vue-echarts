@@ -108,6 +108,7 @@ export default {
       };
       isDonutStyle && this.setDonutstyle(options);
       isRoseStyle && this.setRoseStyle(options);
+      this.setColor(options)
 
       return {
         ...options,
@@ -121,6 +122,11 @@ export default {
     },
     setRoseStyle(options) {
       options.series[0].roseType = "radius";
+    },
+    setColor(options){
+      if(this.colors.length > 0) {
+        options.color = this.colors
+      }
     }
   }
 };
