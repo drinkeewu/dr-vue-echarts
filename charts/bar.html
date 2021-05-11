@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>BarChart 柱状图 | dr-vue-echarts</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="基于Vue.js、Echarts的图表组件库">
+    
+    <link rel="preload" href="/dr-vue-echarts/assets/css/0.styles.b385297a.css" as="style"><link rel="preload" href="/dr-vue-echarts/assets/js/app.e8dd956b.js" as="script"><link rel="preload" href="/dr-vue-echarts/assets/js/2.3c77c841.js" as="script"><link rel="preload" href="/dr-vue-echarts/assets/js/30.4318a2db.js" as="script"><link rel="preload" href="/dr-vue-echarts/assets/js/7.09183811.js" as="script"><link rel="preload" href="/dr-vue-echarts/assets/js/8.4e33c7c5.js" as="script"><link rel="preload" href="/dr-vue-echarts/assets/js/10.223806ff.js" as="script"><link rel="preload" href="/dr-vue-echarts/assets/js/13.0f836516.js" as="script"><link rel="preload" href="/dr-vue-echarts/assets/js/11.b186c4dd.js" as="script"><link rel="preload" href="/dr-vue-echarts/assets/js/9.408d41c0.js" as="script"><link rel="preload" href="/dr-vue-echarts/assets/js/12.88d4df48.js" as="script"><link rel="preload" href="/dr-vue-echarts/assets/js/24.69e8ca35.js" as="script"><link rel="prefetch" href="/dr-vue-echarts/assets/js/14.1caff20c.js"><link rel="prefetch" href="/dr-vue-echarts/assets/js/15.a1f77d67.js"><link rel="prefetch" href="/dr-vue-echarts/assets/js/16.b0c65ff2.js"><link rel="prefetch" href="/dr-vue-echarts/assets/js/17.053974c0.js"><link rel="prefetch" href="/dr-vue-echarts/assets/js/18.37bc2095.js"><link rel="prefetch" href="/dr-vue-echarts/assets/js/19.98d66191.js"><link rel="prefetch" href="/dr-vue-echarts/assets/js/20.1a536271.js"><link rel="prefetch" href="/dr-vue-echarts/assets/js/21.5c7393c4.js"><link rel="prefetch" href="/dr-vue-echarts/assets/js/22.e7636741.js"><link rel="prefetch" href="/dr-vue-echarts/assets/js/23.7e67116e.js"><link rel="prefetch" href="/dr-vue-echarts/assets/js/25.2be9c951.js"><link rel="prefetch" href="/dr-vue-echarts/assets/js/26.247b48eb.js"><link rel="prefetch" href="/dr-vue-echarts/assets/js/27.069f04fa.js"><link rel="prefetch" href="/dr-vue-echarts/assets/js/28.370825f8.js"><link rel="prefetch" href="/dr-vue-echarts/assets/js/29.40a7ab28.js"><link rel="prefetch" href="/dr-vue-echarts/assets/js/3.d410e1f3.js"><link rel="prefetch" href="/dr-vue-echarts/assets/js/31.869bfd18.js"><link rel="prefetch" href="/dr-vue-echarts/assets/js/32.2c34c58d.js"><link rel="prefetch" href="/dr-vue-echarts/assets/js/33.f4586e6a.js"><link rel="prefetch" href="/dr-vue-echarts/assets/js/34.8c09c7d3.js"><link rel="prefetch" href="/dr-vue-echarts/assets/js/35.f2e2f501.js"><link rel="prefetch" href="/dr-vue-echarts/assets/js/36.cd77ac5b.js"><link rel="prefetch" href="/dr-vue-echarts/assets/js/37.40157099.js"><link rel="prefetch" href="/dr-vue-echarts/assets/js/38.d41158d8.js"><link rel="prefetch" href="/dr-vue-echarts/assets/js/4.e4522e7a.js"><link rel="prefetch" href="/dr-vue-echarts/assets/js/5.d50430fb.js"><link rel="prefetch" href="/dr-vue-echarts/assets/js/6.ef553525.js">
+    <link rel="stylesheet" href="/dr-vue-echarts/assets/css/0.styles.b385297a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/dr-vue-echarts/" class="home-link router-link-active"><!----> <span class="site-name">dr-vue-echarts</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/dr-vue-echarts/usage/" class="nav-link">
+  教程
+</a></div><div class="nav-item"><a href="https://github.com/drinkeewu/dr-vue-echarts" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/dr-vue-echarts/usage/" class="nav-link">
+  教程
+</a></div><div class="nav-item"><a href="https://github.com/drinkeewu/dr-vue-echarts" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>开发指南</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/dr-vue-echarts/usage/" class="sidebar-link">快速开始</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>组件</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/dr-vue-echarts/charts/bar.html" aria-current="page" class="active sidebar-link">BarChart 柱状图</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/dr-vue-echarts/charts/bar.html#基础用法" class="sidebar-link">基础用法</a></li><li class="sidebar-sub-header"><a href="/dr-vue-echarts/charts/bar.html#标题倾斜" class="sidebar-link">标题倾斜</a></li><li class="sidebar-sub-header"><a href="/dr-vue-echarts/charts/bar.html#拖动缩放" class="sidebar-link">拖动缩放</a></li><li class="sidebar-sub-header"><a href="/dr-vue-echarts/charts/bar.html#多个类型的数据" class="sidebar-link">多个类型的数据</a></li><li class="sidebar-sub-header"><a href="/dr-vue-echarts/charts/bar.html#水平柱状图" class="sidebar-link">水平柱状图</a></li><li class="sidebar-sub-header"><a href="/dr-vue-echarts/charts/bar.html#彩色柱状图" class="sidebar-link">彩色柱状图</a></li><li class="sidebar-sub-header"><a href="/dr-vue-echarts/charts/bar.html#属性-attributes" class="sidebar-link">属性 Attributes</a></li></ul></li><li><a href="/dr-vue-echarts/charts/line.html" class="sidebar-link">LineChart 折线图</a></li><li><a href="/dr-vue-echarts/charts/pie.html" class="sidebar-link">PieChart 饼图</a></li><li><a href="/dr-vue-echarts/charts/word-cloud.html" class="sidebar-link">WordCloudChart 词云</a></li><li><a href="/dr-vue-echarts/charts/map.html" class="sidebar-link">MapChart 地图</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="barchart-柱状图"><a href="#barchart-柱状图" class="header-anchor">#</a> BarChart 柱状图</h1> <p></p><div class="table-of-contents"><ul><li><a href="#基础用法">基础用法</a></li><li><a href="#标题倾斜">标题倾斜</a></li><li><a href="#拖动缩放">拖动缩放</a></li><li><a href="#多个类型的数据">多个类型的数据</a></li><li><a href="#水平柱状图">水平柱状图</a></li><li><a href="#彩色柱状图">彩色柱状图</a></li><li><a href="#属性-attributes">属性 Attributes</a></li></ul></div><p></p> <h2 id="基础用法"><a href="#基础用法" class="header-anchor">#</a> 基础用法</h2> <div class="code" data-v-533a4104><div class="el-card code-demo is-hover-shadow" data-v-533a4104><!----><div class="el-card__body" style="padding:20px 20px 0 20px;"><div class="code-content" data-v-533a4104><div class="chart" data-v-33d0fcfa><!----></div></div> <div class="expand" style="display:none;" data-v-533a4104 data-v-533a4104><!----> <div class="content__barBase" data-v-533a4104><div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>chart<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>BarChart</span>  
+      <span class="token attr-name">:data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>data<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">x-name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>时间<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">y-name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>人数<span class="token punctuation">&quot;</span></span>
+    <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">&quot;BarBase&quot;</span><span class="token punctuation">,</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      data<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          name<span class="token operator">:</span> <span class="token string">&quot;学生人数&quot;</span><span class="token punctuation">,</span>
+          data<span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              label<span class="token operator">:</span> <span class="token string">&quot;2018&quot;</span><span class="token punctuation">,</span>
+              value<span class="token operator">:</span> <span class="token number">45</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span>
+              label<span class="token operator">:</span> <span class="token string">&quot;2019&quot;</span><span class="token punctuation">,</span>
+              value<span class="token operator">:</span> <span class="token number">60</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+<span class="token selector">.chart</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+
+</code></pre></div></div></div> <div class="toggle-button" data-v-533a4104><i class="el-icon-caret-bottom" data-v-533a4104></i>
+      显示代码
+    </div></div></div></div> <h2 id="标题倾斜"><a href="#标题倾斜" class="header-anchor">#</a> 标题倾斜</h2> <div class="code" data-v-533a4104><div class="el-card code-demo is-hover-shadow" data-v-533a4104><!----><div class="el-card__body" style="padding:20px 20px 0 20px;"><div class="code-content" data-v-533a4104><div class="chart" data-v-441dca2f><!----></div> </div> <div class="expand" style="display:none;" data-v-533a4104 data-v-533a4104><div class="tips" data-v-533a4104><div>
+  当属数据量较多时, 横坐标的标题会可能因为挤压而显示不全。此时可设置<code>label-rotate</code>属性为<code>true</code>,让标题倾斜。
+  </div></div> <div class="content__barLabelRotate" data-v-533a4104><div class="language-vue extra-class"><div class="highlight-lines"><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>chart<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bar-chart</span>
+      <span class="token attr-name">:data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>data<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">label-rotate</span>
+     <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">&quot;BarLabelRotate&quot;</span><span class="token punctuation">,</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      data<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          name<span class="token operator">:</span> <span class="token string">&quot;学生人数&quot;</span><span class="token punctuation">,</span>
+          data<span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2010'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">8</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2011'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">10</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2012'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">12</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2013'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">7</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2014'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">9</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2015'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">16</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2016'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">15</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2017'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">18</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2018'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">20</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2019'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">5</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2020'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">9</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+<span class="token selector">.chart</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+
+</code></pre></div></div></div> <div class="toggle-button" data-v-533a4104><i class="el-icon-caret-bottom" data-v-533a4104></i>
+      显示代码
+    </div></div></div></div> <h2 id="拖动缩放"><a href="#拖动缩放" class="header-anchor">#</a> 拖动缩放</h2> <div class="code" data-v-533a4104><div class="el-card code-demo is-hover-shadow" data-v-533a4104><!----><div class="el-card__body" style="padding:20px 20px 0 20px;"><div class="code-content" data-v-533a4104><div data-v-6e4e024a><div class="chart" data-v-6e4e024a><!----></div> <div class="chart" data-v-6e4e024a><!----></div></div> </div> <div class="expand" style="display:none;" data-v-533a4104 data-v-533a4104><div class="tips" data-v-533a4104><div>
+  设置<code>zoom</code>属性为<code>true</code>, 显示拖动缩放工具栏。还可以传入<code>zoom-range</code>属性, 设置默认显示范围。
+  </div></div> <div class="content__barZoom" data-v-533a4104><div class="language-vue extra-class"><div class="highlight-lines"><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>chart<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bar-chart</span>
+      <span class="token attr-name">:data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>data<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">label-rotate</span>
+      <span class="token attr-name">zoom</span>
+     <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>chart<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bar-chart</span>
+      <span class="token attr-name">:data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>data<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">label-rotate</span>
+      <span class="token attr-name">zoom</span>
+      <span class="token attr-name">:zoom-range</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>[20, 80]<span class="token punctuation">&quot;</span></span>
+    <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">&quot;BarLabelRotate&quot;</span><span class="token punctuation">,</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      data<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          name<span class="token operator">:</span> <span class="token string">&quot;学生人数&quot;</span><span class="token punctuation">,</span>
+          data<span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2010'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">8</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2011'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">10</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2012'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">12</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2013'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">7</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2014'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">9</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2015'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">16</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2016'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">15</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2017'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">18</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2018'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">20</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2019'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">5</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2020'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">9</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">scoped</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+<span class="token selector">.chart</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div></div></div> <div class="toggle-button" data-v-533a4104><i class="el-icon-caret-bottom" data-v-533a4104></i>
+      显示代码
+    </div></div></div></div> <h2 id="多个类型的数据"><a href="#多个类型的数据" class="header-anchor">#</a> 多个类型的数据</h2> <div class="code" data-v-533a4104><div class="el-card code-demo is-hover-shadow" data-v-533a4104><!----><div class="el-card__body" style="padding:20px 20px 0 20px;"><div class="code-content" data-v-533a4104><div class="chart"><!----></div></div> <div class="expand" style="display:none;" data-v-533a4104 data-v-533a4104><!----> <div class="content__barMultiTypeData" data-v-533a4104><div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>chart<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bar-chart</span> <span class="token attr-name">:data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>data<span class="token punctuation">&quot;</span></span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">&quot;BarMultiData&quot;</span><span class="token punctuation">,</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      data<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          name<span class="token operator">:</span> <span class="token string">&quot;教师人数&quot;</span><span class="token punctuation">,</span>
+          data<span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">&quot;2018&quot;</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">190</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">&quot;2019&quot;</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">200</span> <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+          name<span class="token operator">:</span> <span class="token string">&quot;学生人数&quot;</span><span class="token punctuation">,</span>
+          data<span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">&quot;2018&quot;</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">340</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">&quot;2019&quot;</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">173</span> <span class="token punctuation">}</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+<span class="token selector">.chart</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+
+</code></pre></div></div></div> <div class="toggle-button" data-v-533a4104><i class="el-icon-caret-bottom" data-v-533a4104></i>
+      显示代码
+    </div></div></div></div> <h2 id="水平柱状图"><a href="#水平柱状图" class="header-anchor">#</a> 水平柱状图</h2> <div class="code" data-v-533a4104><div class="el-card code-demo is-hover-shadow" data-v-533a4104><!----><div class="el-card__body" style="padding:20px 20px 0 20px;"><div class="code-content" data-v-533a4104><div class="chart" data-v-2edf51e8><!----></div> </div> <div class="expand" style="display:none;" data-v-533a4104 data-v-533a4104><div class="tips" data-v-533a4104><div>
+  设置<code>horizontal</code>为<code>true</code>, 显示水平柱状图。
+  </div></div> <div class="content__barHorizontal" data-v-533a4104><div class="language-vue extra-class"><div class="highlight-lines"><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>chart<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bar-chart</span>
+      <span class="token attr-name">:data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>data<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">horizontal</span>
+      <span class="token attr-name">zoom</span>
+      <span class="token attr-name">y-name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>年份<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">x-name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>人数<span class="token punctuation">&quot;</span></span>
+     <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">&quot;BarLabelRotate&quot;</span><span class="token punctuation">,</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      data<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          name<span class="token operator">:</span> <span class="token string">&quot;学生人数&quot;</span><span class="token punctuation">,</span>
+          data<span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2010'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">8</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2011'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">10</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2012'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">12</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2013'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">7</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2014'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">9</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2015'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">16</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2016'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">15</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2017'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">18</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2018'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">20</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2019'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">5</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2020'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">9</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">scoped</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+<span class="token selector">.chart</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+
+</code></pre></div></div></div> <div class="toggle-button" data-v-533a4104><i class="el-icon-caret-bottom" data-v-533a4104></i>
+      显示代码
+    </div></div></div></div> <h2 id="彩色柱状图"><a href="#彩色柱状图" class="header-anchor">#</a> 彩色柱状图</h2> <div class="code" data-v-533a4104><div class="el-card code-demo is-hover-shadow" data-v-533a4104><!----><div class="el-card__body" style="padding:20px 20px 0 20px;"><div class="code-content" data-v-533a4104><div class="chart" data-v-4620d9ff><!----></div> </div> <div class="expand" style="display:none;" data-v-533a4104 data-v-533a4104><div class="tips" data-v-533a4104><div>
+  设置<code>rainbow</code>属性为<code>true</code>, 可以使同一数据显示不同颜色的柱状图
+  </div></div> <div class="content__barRainbow" data-v-533a4104><div class="language-vue extra-class"><div class="highlight-lines"><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>chart<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>bar-chart</span>
+      <span class="token attr-name">:data</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>data<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">label-rotate</span>
+      <span class="token attr-name">rainbow</span>
+      <span class="token attr-name">x-name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>年份<span class="token punctuation">&quot;</span></span>
+      <span class="token attr-name">y-name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>人数<span class="token punctuation">&quot;</span></span>
+     <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">&quot;BarLabelRotate&quot;</span><span class="token punctuation">,</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      data<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+          name<span class="token operator">:</span> <span class="token string">&quot;学生人数&quot;</span><span class="token punctuation">,</span>
+          data<span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2010'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">8</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2011'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">10</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2012'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">12</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2013'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">7</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2014'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">9</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2015'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">16</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2016'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">15</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2017'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">18</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2018'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">20</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2019'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">5</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token punctuation">{</span> label<span class="token operator">:</span> <span class="token string">'2020'</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token number">9</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">]</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">scoped</span><span class="token punctuation">&gt;</span></span><span class="token style"><span class="token language-css">
+<span class="token selector">.chart</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">&gt;</span></span>
+
+</code></pre></div></div></div> <div class="toggle-button" data-v-533a4104><i class="el-icon-caret-bottom" data-v-533a4104></i>
+      显示代码
+    </div></div></div></div> <h2 id="属性-attributes"><a href="#属性-attributes" class="header-anchor">#</a> 属性 Attributes</h2> <div class="el-table el-table--fit el-table--enable-row-hover el-table--enable-row-transition"><div class="hidden-columns"><div></div><div></div><div></div><div></div><div></div></div><div class="el-table__header-wrapper"><table cellspacing="0" cellpadding="0" border="0" class="el-table__header" style="width:;"><colgroup></colgroup><thead><tr></tr></thead></table></div><div class="el-table__body-wrapper is-scrolling-none"><table cellspacing="0" cellpadding="0" border="0" class="el-table__body" style="width:;"><colgroup></colgroup><tbody><tr class="el-table__row"></tr><tr class="el-table__row"></tr><tr class="el-table__row"></tr><tr class="el-table__row"></tr><tr class="el-table__row"></tr><tr class="el-table__row"></tr><tr class="el-table__row"></tr><tr class="el-table__row"></tr><tr class="el-table__row"></tr><tr class="el-table__row"></tr><tr class="el-table__row"></tr><tr class="el-table__row"></tr><tr class="el-table__row"></tr><tr class="el-table__row"></tr><tr class="el-table__row"></tr><tr class="el-table__row"></tr><tr class="el-table__row"></tr><tr class="el-table__row"></tr><tr class="el-table__row"></tr><!----></tbody></table><!----><!----></div><!----><!----><!----><!----><div class="el-table__column-resize-proxy" style="display:none;"></div></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/dr-vue-echarts/usage/" class="prev">
+        快速开始
+      </a></span> <span class="next"><a href="/dr-vue-echarts/charts/line.html">
+        LineChart 折线图
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/dr-vue-echarts/assets/js/app.e8dd956b.js" defer></script><script src="/dr-vue-echarts/assets/js/2.3c77c841.js" defer></script><script src="/dr-vue-echarts/assets/js/30.4318a2db.js" defer></script><script src="/dr-vue-echarts/assets/js/7.09183811.js" defer></script><script src="/dr-vue-echarts/assets/js/8.4e33c7c5.js" defer></script><script src="/dr-vue-echarts/assets/js/10.223806ff.js" defer></script><script src="/dr-vue-echarts/assets/js/13.0f836516.js" defer></script><script src="/dr-vue-echarts/assets/js/11.b186c4dd.js" defer></script><script src="/dr-vue-echarts/assets/js/9.408d41c0.js" defer></script><script src="/dr-vue-echarts/assets/js/12.88d4df48.js" defer></script><script src="/dr-vue-echarts/assets/js/24.69e8ca35.js" defer></script>
+  </body>
+</html>
